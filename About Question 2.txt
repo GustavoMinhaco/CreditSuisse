@@ -1,0 +1,19 @@
+--------------------------------------------------------------------------------------------
+Question 2: A new category was created called PEP (politically exposed person). 
+Also, a new bool property IsPoliticallyExposed was created in the ITrade interface. 
+A trade shall be categorized as PEP if IsPoliticallyExposed is true. 
+Describe in at most 1 paragraph what you must do in your design to account for this new category.
+---------------------------------------------------------------------------------------------
+
+Response: 
+
+1- Considering that the ‘IsPoliticallyExposed’ property is in the ITrade interface, we need to implement the new property in ‘Trade.cs’. Make sure to add the possibility of not passing the property by putting a default value of ‘false’ for it.
+
+2- In 'Rules.cs', we just need to create another class called ‘PEP’ and make the rule 
+for the new case.
+
+3- In the ‘GetRules’ method, in ‘Program.cs’, we have to add the ‘PEP’ rule before the expired one so that this rule is the first one checked.
+
+4- In the ‘AddTrade’ method, in the ‘OperationController.cs’ class, we have to add another value in the switch-case for the new property in ‘ITrade.cs’.
+
+5- The use of the Strategy Design Pattern was designed to allow and facilitate the inclusion of new rules without impacting existing ones.
